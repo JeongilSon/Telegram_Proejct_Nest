@@ -199,3 +199,134 @@ constructor(
 3. 변경사항 커밋 (`git commit -am 'Add new feature'`)
 4. 브랜치 푸시 (`git push origin feature/new-feature`)
 5. Pull Request 생성
+
+
+# Telegram Project - Nest.js Migration
+
+기존 .NET Core Telegram 프로젝트를 Nest.js로 마이그레이션한 학습 프로젝트입니다.
+
+## 🏗️ 프로젝트 구조
+
+```
+telegram-nestjs-project/
+├── src/
+│   ├── modules/
+│   │   ├── auth/           # 인증 모듈 (AccountController)
+│   │   ├── user/           # 사용자 관리 (UserController)
+│   │   ├── bot/            # 봇 토큰 관리 (BotController)
+│   │   ├── chat/           # 실시간 채팅 (LivechatController)
+│   │   ├── channel/        # 채널 관리 (ChannelController)
+│   │   ├── link/           # 링크 관리 (LinkController)
+│   │   ├── mission/        # 미션 관리 (MissionController)
+│   │   └── bot-message/    # 봇 메시지 (BotMessageController)
+│   ├── entities/           # TypeORM 엔티티들
+│   ├── dto/               # Data Transfer Objects
+│   ├── guards/            # 인증 가드
+│   ├── decorators/        # 커스텀 데코레이터
+│   └── common/            # 공통 유틸리티
+├── frontend/              # React.js 프론트엔드
+└── docs/                  # 마이그레이션 문서
+```
+
+## 🛠️ 기술 스택
+
+### 백엔드
+- **Framework**: Nest.js (Express 기반)
+- **Database**: MySQL + TypeORM
+- **Authentication**: JWT + Passport
+- **Real-time**: Socket.IO
+- **Validation**: class-validator
+- **Documentation**: Swagger
+
+### 프론트엔드
+- **Framework**: React.js + TypeScript
+- **State Management**: Redux Toolkit
+- **UI Library**: Material-UI
+- **Real-time**: Socket.IO Client
+- **HTTP Client**: Axios
+
+## 📋 마이그레이션 단계
+
+### Phase 1: 기본 설정
+- [x] Nest.js 프로젝트 초기화
+- [ ] TypeORM 설정
+- [ ] MySQL 연결 설정
+- [ ] 기본 모듈 구조 생성
+
+### Phase 2: 엔티티 및 데이터베이스
+- [ ] 모든 엔티티 마이그레이션
+- [ ] 관계 설정
+- [ ] 마이그레이션 파일 생성
+
+### Phase 3: API 엔드포인트
+- [ ] 인증 모듈 (AccountController)
+- [ ] 사용자 관리 (UserController)
+- [ ] 봇 관리 (BotController)
+- [ ] 실시간 채팅 (LivechatController)
+- [ ] 기타 모듈들
+
+### Phase 4: 실시간 기능
+- [ ] Socket.IO 설정
+- [ ] 실시간 채팅 구현
+- [ ] 실시간 알림
+
+### Phase 5: 프론트엔드
+- [ ] React 프로젝트 설정
+- [ ] 컴포넌트 마이그레이션
+- [ ] 상태 관리 구현
+
+## 🚀 빠른 시작
+
+```bash
+# 1. 프로젝트 클론
+git clone <repository-url>
+cd telegram-nestjs-project
+
+# 2. 백엔드 설정
+npm install
+cp .env.example .env
+# .env 파일에서 데이터베이스 설정
+
+# 3. 데이터베이스 마이그레이션
+npm run migration:run
+
+# 4. 개발 서버 시작
+npm run start:dev
+
+# 5. 프론트엔드 (별도 터미널)
+cd frontend
+npm install
+npm start
+```
+
+## 📚 학습 목표
+
+1. **Nest.js 아키텍처 이해**
+   - 모듈, 컨트롤러, 서비스 패턴
+   - 의존성 주입 (DI)
+   - 가드, 인터셉터, 파이프
+
+2. **TypeORM 활용**
+   - 엔티티 설계
+   - 관계 매핑
+   - 쿼리 빌더
+
+3. **실시간 통신**
+   - Socket.IO 구현
+   - WebSocket 연결 관리
+
+4. **인증 및 보안**
+   - JWT 토큰
+   - Passport 전략
+   - 권한 관리
+
+5. **API 설계**
+   - RESTful API
+   - Swagger 문서화
+   - 에러 핸들링
+
+## 📖 참고 자료
+
+- [Nest.js 공식 문서](https://docs.nestjs.com/)
+- [TypeORM 문서](https://typeorm.io/)
+- [Socket.IO 문서](https://socket.io/) 
